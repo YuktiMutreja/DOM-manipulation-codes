@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Regular Expression</title>
+        <script type="text/javascript">
+        function validate()
+        {
+            var username=document.getElementById("uname").value;
+            var regx=/[^1abc]abc/;
+            //regx=new RegExp("E00","i");
+            if(regx.test(username))
+            {
+                alert("valid username");
+                document.getElementById("lbuser").style.visibility="hidden";
+            }
+            else
+            {
+                document.getElementById("lbuser").style.visibility="visible";
+            }
+        }
+        
+        
+        </script>   <!--2nd method of using regular exp is through new keyword and using RegExp()-->
+    </head>        <!--[] consists of range/ specific characters-->
+    <body>
+    <form>
+    <input id="uname" placeholder="username" type="text"/>
+    <br>
+    <label id="lbuser" style="color : red ; visibility:hidden">INVALID USERNAME</label>
+    <br>
+    <button onclick="validate()" type="button">SUBMIT</button>
+    </form>
+    </body>
+</html>
+<!--[a-x]00 means that pattern should be there in entire array.. no specific location
+[0-5]abc means characters+nos combination
+[0-5]a[6-9]b
+[^1abc]abc-->

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>mouseover events</title>
+        <script type="text/javascript">
+        function setNewImage()
+        {
+           document.getElementById("img1").src="C:\Users\lenovo\Documents\dom manipulation\images/india.jpg"; 
+        }
+ 
+       function setOldImage()
+       {
+        document.getElementById("img1").src="C:\Users\lenovo\Documents\dom manipulation\images/diwan.jpg"; 
+       }
+        </script>
+    </head>
+    <body>
+        <img id="img1"onmouseover="setNewImage()" onmouseout="setOldImage()" src="images/diwan.jpg"/>
+
+    </body>
+</html>

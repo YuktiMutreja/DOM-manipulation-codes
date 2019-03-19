@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>getElementByClassName</title>
+        <script type="text/javascript">
+        function changestyling()
+        {
+            var element=document.getElementsByClassName("mypara");  
+            for(var x=0;x<element.length;x++)
+            {
+                element[x].style.color="red";
+            }
+        }
+
+        </script>
+    </head>
+    <body>
+        <p id="p1" class="mypara">This is paragraph 1</p>  <!--id is unique, thus para 1,3 and 5 have class-->
+        <p>This is paragraph 2</p>                         <!--class helps to keep 3 paras interconnected-->
+        <p class="mypara">this is paragraph 3</p>       
+        <p>this is paragraph 4</p>
+        <p class="mypara">this is paragraph 5</p>
+        <a class="mypara" href="#">This is Anchor Tag</a>
+        <br>
+        <button onclick="changestyling()">Click Me</button>
+    </body>
+</html>
+
+<!--using getelementBYclassname, we can access all tags regardless of type-->
+<!--using getElementbyTagname, we can access only the elements belonging a particular tag,
+like paragraph tag, anchor tag....-->

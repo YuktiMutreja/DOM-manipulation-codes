@@ -1,0 +1,33 @@
+<html>
+<head> 
+        <title>DOM MANIPULATION</title> 
+        <script type="text/javascript">
+        function ChangeStyling()
+        {
+          var username=document.getElementById("uname");
+          var password=document.getElementById("pass");
+
+          if(username.value.trim()=="" || password.value.trim()==" ")
+          {
+              alert("no blank value allowed");
+              return false;
+          }
+          else
+          {
+               true;
+          }
+        }
+        </script>
+    </head>
+    <body>
+    <form onsubmit=" return ChangeStyling()" action="message.html">  <!--form tag is used when we wish to submit the data to some other page/server-->
+    <input id="uname" placeholder="username" type="text"/> 
+    <br>
+    <br>
+    <input id="pass" placeholder="password" type="password"/>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+    </form>
+    </body>
+</html>

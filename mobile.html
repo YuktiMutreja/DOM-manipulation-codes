@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Regular Expressions</title>
+        <script type="text/javascript">
+        
+        //\d : match any digit (equal to [0-9])
+        //\w : match any word character(a-z, A-Z, 0-9 )
+        //\s : match whitespace characters (spaces and tabs)
+       // \t : match a tab only
+        
+        function validate()
+        {
+            var text=document.getElementById("text1").value;
+            var regx=/^[7-9]\d{9}$/;
+            if(regx.test(text))
+            {
+             document.getElementById("lb1text").innerHTML="valid";
+             document.getElementById("lb1text").style.visibility="visible";
+             document.getElementById("lb1text").style.color="green";
+            }
+            else
+            {
+                document.getElementById("lb1text").innerHTML="invalid";
+                document.getElementById("lb1text").style.visibility="visible";
+             document.getElementById("lb1text").style.color="red";
+            }
+        }           
+
+        </script> <!--[^abc] means that we cannot have our expression starting from abc-->
+        <!--^[abc] specifies the starting point of our expression-->
+        <!--dollar denotes end of string-->
+    </head>
+    <body>
+    <form>
+        <input id="text1" placeholder="cellphone" type="text"/>
+        <br>
+        <label id="lb1text" style="color:red ; visibility:hidden">Invalid</label>
+        <br>
+        <button onclick="validate()" type="button">Submit</button>
+    </form>
+    </body>
+</html>

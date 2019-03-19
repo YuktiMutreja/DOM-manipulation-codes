@@ -1,0 +1,48 @@
+/<html>
+    <head>
+        <title>Form Validations</title>
+        <script type="text/javascript">
+        
+        function ChangeStyling()
+        {
+         var username=document.getElementById("uname");
+         var password=document.getElementById("pass");
+
+         if(username.value.trim()==" ")
+         {
+             //alert("blank username");
+             username.style.border="solid 3px red";
+             document.getElementById("lbuser").style.visibility="visible";
+             return false;
+         }
+         else if(password.value.trim()==" ")
+         {
+             alert("blank password");
+             return false;
+         }
+         else if(password.value.trim().length<5)
+         {
+             alert("password too short");
+             return false;
+         }
+         else
+         {
+             return true;
+         }
+        }
+        
+        </script>  <!--if user will leave username blank, red text box will appear showing invalid operation-->
+    </head>
+    <body>
+  <form onsubmit="return ChangeStyling();" action="message.html"> <!--if return is false, form cannot be submitted-->
+ <input id="uname" placeholder="username" type="text"/>  <!--attach with message.html-->
+ <label id="lbuser" style="color:red ; visibility:hidden;">INVALID</label>
+ <br>
+ <br>
+ <input id="pass" placeholder="password" type="password"/>
+ <br>
+ <br>
+ <button type="submit">Submit</button>
+</form>
+    </body>                    <!--trim() will prevent to add spaces also in our fields-->
+</html>

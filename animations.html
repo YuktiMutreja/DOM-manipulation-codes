@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Basic Animations - fade in and out</title>
+        <script type="text/javascript">
+         
+         var opacity=0;
+         var intervalId=0;
+
+         function fadeout()
+         {
+           intervalId=setInterval(hide,200);
+         }
+          
+          function hide()
+          {
+              var img=document.getElementById("img1");
+              opacity=Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+              if(opacity>0)
+              {
+                  opacity=opacity-0.1;
+                  img.style.opacity=opacity
+              }
+              else
+              {
+                  clearInterval(intervalId);
+              }
+          }
+         function fadeIn()
+         {
+           intervalId=setInterval(show,200);
+         }
+         function show()
+         {
+            var img=document.getElementById("img1");
+              opacity=Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+              if(opacity<1)
+              {
+                  opacity=opacity+0.1;
+                  img.style.opacity=opacity
+              }
+              else
+              {
+                  clearInterval(intervalId);
+              }
+         }
+
+        
+        </script>       
+    </head>
+ <body>
+ <button onclick="fadeout()" id="btnadd">FADE OUT</button>
+ <br>
+ <img style="opacity: 1 ;" id="img1" src="images/diwan.jpg"/>
+ <br>
+ <button onclick="fadeIn()" id="btnstop">FADE IN</button>
+ </body>
+</html>

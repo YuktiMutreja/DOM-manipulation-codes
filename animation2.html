@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Basic Animations</title>
+        <script type="text/javascript">
+       
+        var width=100;
+        var difference=2;
+        var intervalId=0;
+
+       function increase()
+       {
+          intervalId= setInterval(zoomin,200);
+       }
+
+       function zoomin()
+       {
+           if(width<200)
+           {
+               width=width+difference;
+               document.getElementById("img1").style.width=width;
+           }
+           else
+           {
+              clearInterval(intervalId);
+           }
+       }
+
+        function decrease()
+       {
+           clearInterval(intervalId);
+           intervalId=setInterval(zoomout,200);
+       }      
+
+       function zoomout()
+       {
+           if(width>100)
+           {
+               width=width-difference;
+               document.getElementById("img1").style.width=width;
+           }
+           else
+           {
+              clearInterval(intervalId);
+           }
+       }
+
+        
+        </script>
+    </head>
+    <body>
+    <br>
+    <br>
+    <img onmouseover="increase()" onmouseout="decrease()" id="img1" src="images/india.jpg"/>
+    </body>
+</html>
